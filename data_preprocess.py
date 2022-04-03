@@ -36,7 +36,7 @@ def process_data(X,training=True,label=None,cat_features=[],ohe=None, lb=None,sc
         y = np.array([])
 
     
-    sampler = SMOTE(random_state=0,k_neighbors=10) 
+    sampler = SMOTE(random_state=0,k_neighbors=20) 
  
     X_categorical = X[cat_features].values
     X_continuous = X.drop(*[cat_features], axis=1)

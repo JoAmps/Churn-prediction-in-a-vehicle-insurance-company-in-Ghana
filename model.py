@@ -24,6 +24,10 @@ def split_data(data):
     except BaseException:
         logging.info('Error!:Error whiles splitting data')
 
+def get_cat_features():
+    cat_features=['city','type_of_plan','highest_level_education','work_status',
+    'sex','relationship_status','reachability','type_of_vehicle']
+    return cat_features
 
 def train_model(X_train, y_train):
     """
