@@ -3,7 +3,7 @@ import logging
 
 
 logging.basicConfig(
-    filename='log',
+    filename='./outputs/process.log',
     level=logging.INFO,
     filemode='w',
     format='%(name)s - %(levelname)s - %(message)s')

@@ -2,15 +2,15 @@ import pandas as pd
 import pytest
 from clean_data import load_data,cleaned_data
 from joblib import load
-from data_preprocess import process_data
-from model import get_cat_features, split_data
+from functions.data_preprocess import process_data
+from functions.model import get_cat_features, split_data
 
 @pytest.fixture
 def data():
     """
     Obtain data
     """
-    df = load_data("veh_invest.csv")
+    df = load_data("datasets/raw_data.csv")
     df = cleaned_data(df)
     return df
 
