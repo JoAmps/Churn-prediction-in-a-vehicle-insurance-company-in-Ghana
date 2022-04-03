@@ -1,11 +1,17 @@
 import numpy as np
-import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from sklearn.preprocessing import OneHotEncoder,LabelBinarizer
+from sklearn.preprocessing import OneHotEncoder, LabelBinarizer
 
 
-def process_data(X,training=True,label=None,cat_features=[],ohe=None, lb=None,scaler=None):
+def process_data(
+        X,
+        training=True,
+        label=None,
+        cat_features=[],
+        ohe=None,
+        lb=None,
+        scaler=None):
     """ Process the data used in the \
         machine learning pipeline.
     Inputs
@@ -35,12 +41,10 @@ def process_data(X,training=True,label=None,cat_features=[],ohe=None, lb=None,sc
     else:
         y = np.array([])
 
-    
-    sampler = SMOTE(random_state=0,k_neighbors=20) 
- 
+    sampler = SMOTE(random_state=0, k_neighbors=20)
+
     X_categorical = X[cat_features].values
     X_continuous = X.drop(*[cat_features], axis=1)
-    
 
     if training is True:
         ohe = OneHotEncoder(sparse=False, handle_unknown="ignore")
@@ -56,7 +60,7 @@ def process_data(X,training=True,label=None,cat_features=[],ohe=None, lb=None,sc
             y = lb.transform(y.values).ravel()
         except AttributeError:
             pass
-          
-    X = np.concatenate([X_continuous, X_categorical], axis=1)  
-    X, y = sampler.fit_resample(X, y)        
-    return X,y,lb,ohe,scaler
+
+    X = np.concatenate([X_continuous, X_categorical], axis=1)
+    X, y = sampler.fit_resample(X, y)
+    return X, y, lb, ohe, scaler

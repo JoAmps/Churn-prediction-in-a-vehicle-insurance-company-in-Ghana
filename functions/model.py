@@ -3,6 +3,7 @@ import logging
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
+
 def split_data(data):
     """
     Splits the data into training and testing
@@ -15,7 +16,7 @@ def split_data(data):
     train
         train data for training
     test
-        test data for validation         
+        test data for validation
     """
     try:
         train, test = train_test_split(data, test_size=0.2, random_state=0)
@@ -24,14 +25,23 @@ def split_data(data):
     except BaseException:
         logging.info('Error!:Error whiles splitting data')
 
+
 def get_cat_features():
-    cat_features=['city','type_of_plan','highest_level_education','work_status',
-    'sex','relationship_status','reachability','type_of_vehicle']
+    cat_features = [
+        'city',
+        'type_of_plan',
+        'highest_level_education',
+        'work_status',
+        'sex',
+        'relationship_status',
+        'reachability',
+        'type_of_vehicle']
     return cat_features
+
 
 def train_model(X_train, y_train):
     """
-    Trains a machine learning model and returns the 
+    Trains a machine learning model and returns the
     trained model.
     Inputs
     ------
@@ -52,6 +62,7 @@ def train_model(X_train, y_train):
     except BaseException:
         logging.info('ERROR!:Model not trained and not saved')
 
+
 def model_predictions(X_test, model):
     """
     Performs prediction on the independent testing data using the trained
@@ -64,14 +75,15 @@ def model_predictions(X_test, model):
              Test labels
     Returns
     -------
-    predictions : int                  
+    predictions : int
     """
     try:
         predictions = model.predict(X_test)
         logging.info('SUCCESS!:Model predictions generated')
         return predictions
     except BaseException:
-        logging.info('ERROR!:Model predictions not generated')    
+        logging.info('ERROR!:Model predictions not generated')
+
 
 def compute_metrics(y, predictions):
     """
@@ -90,20 +102,20 @@ def compute_metrics(y, predictions):
     fbeta : float
     """
     try:
-        model_scores = []
         f1 = f1_score(y, predictions)
         precision = precision_score(y, predictions)
         recall = recall_score(y, predictions)
         logging.info('SUCCESS: Model scoring completed')
         return precision, recall, f1
     except BaseException:
-        logging.info('ERROR: Error occurred when scoring Models')        
+        logging.info('ERROR: Error occurred when scoring Models')
+
 
 def inference(model, X):
     """ Run model inferences and return the predictions.
     Inputs
     ------
-    model : 
+    model :
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -113,4 +125,4 @@ def inference(model, X):
         Predictions from the model.
     """
     preds = model.predict(X)
-    return preds        
+    return preds
