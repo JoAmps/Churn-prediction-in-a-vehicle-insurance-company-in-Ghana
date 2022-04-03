@@ -54,7 +54,6 @@ def process_data(X,training=True,label=None,cat_features=[],ohe=None, lb=None,sc
         X_continuous = scaler.transform(X_continuous)
         try:
             y = lb.transform(y.values).ravel()
-        # Catch the case where y is None because we're doing inference.
         except AttributeError:
             pass
           
