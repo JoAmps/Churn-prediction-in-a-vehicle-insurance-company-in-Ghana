@@ -1,8 +1,8 @@
 
 import logging
-from data_preprocess import process_data
+from functions.data_preprocess import process_data
 from clean_data import load_data
-from model import train_model, \
+from functions.model import train_model, \
     compute_metrics, model_predictions, split_data, get_cat_features
 from joblib import dump
 
@@ -14,13 +14,13 @@ logging.basicConfig(
 
 
 if __name__ == '__main__':
-    df = load_data('cleaned_data.csv')
+    df = load_data('datasets/cleaned_data.csv')
     train, test = split_data(df)
     X_train,y_train,lb,ohe,scaler=process_data(train,training=True,label='churn',cat_features=get_cat_features())
     X_test,y_test,lb_t,ohe_t,scaler_t=process_data(test,training=False,label='churn',cat_features=get_cat_features(),ohe=ohe, lb=lb,scaler=scaler)
-    dump(lb_t,'lb.joblib')
-    dump(ohe_t,'ohe.joblib')
-    dump(scaler_t,'scaler.joblib')
+    dump(lb_t,'./model_objects/lb.joblib')
+    dump(ohe_t,'./model_objects/ohe.joblib')
+    dump(scaler_t,'./model_objects/scaler.joblib')
     model = train_model(X_train, y_train)
     predictions = model_predictions(X_test, model)
     precision, recall, f1 = compute_metrics(y_test, predictions)
