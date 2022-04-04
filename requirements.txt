@@ -6,3 +6,6 @@ requests
 flake8
 imblearn
 xgboost
+gunicorn
+uvloop
+httptools
