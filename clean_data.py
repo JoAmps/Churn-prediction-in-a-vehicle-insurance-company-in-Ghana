@@ -11,7 +11,7 @@ logging.basicConfig(
 
 def load_data(path):
     try:
-        df = pd.read_csv(path)
+        df = pd.read_csv(path ,index_col=[0])
         logging.info('SUCCESS: Data imported succesfully')
         return df
     except BaseException:
@@ -20,7 +20,7 @@ def load_data(path):
 
 def cleaned_data(df):
     try:
-        df.drop(columns=['Unnamed: 0'])
+        #df.drop(columns=['Unnamed: 0'])
         logging.info('SUCCESS: Unneccesary columns removed')
         df.to_csv('./datasets/cleaned_data.csv')
         return df

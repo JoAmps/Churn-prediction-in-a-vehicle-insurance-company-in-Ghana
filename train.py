@@ -25,6 +25,7 @@ if __name__ == '__main__':
     dump(ohe_t, './outputs/ohe.joblib')
     dump(scaler_t, './outputs/scaler.joblib')
     model = train_model(X_train, y_train)
+    dump(model, './outputs/model.joblib')
     predictions = model_predictions(X_test, model)
     precision, recall, f1 = compute_metrics(y_test, predictions)
     model_scores = []
