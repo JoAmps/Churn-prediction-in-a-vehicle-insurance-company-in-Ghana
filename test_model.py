@@ -1,5 +1,5 @@
 import pytest
-from clean_data import load_data, cleaned_data
+from clean_data import load_data
 from functions.data_preprocess import process_data
 from functions.model import get_cat_features, split_data, model_predictions
 from joblib import load
