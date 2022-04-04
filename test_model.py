@@ -11,7 +11,6 @@ def data():
     Obtain data
     """
     df = load_data("datasets/raw_data.csv")
-    df = cleaned_data(df)
     return df
 
 
