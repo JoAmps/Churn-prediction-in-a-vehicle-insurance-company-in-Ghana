@@ -1,8 +1,9 @@
 import pytest
 from clean_data import load_data, cleaned_data
 from functions.data_preprocess import process_data
-from functions.model import get_cat_features, split_data,model_predictions
+from functions.model import get_cat_features, split_data, model_predictions
 from joblib import load
+
 
 @pytest.fixture
 def data():
@@ -37,26 +38,30 @@ def test_process_train(data):
         data, training=True, label='churn', cat_features=get_cat_features())
     assert X_train.shape[0] == y_train.shape[0]
 
+
 def test_process_test(data):
     """
     Check test data has same number of rows for X and y
     """
     ohe = load("outputs/ohe.joblib")
-    lb = load("outputs/lb.joblib") 
+    lb = load("outputs/lb.joblib")
     scaler = load("outputs/scaler.joblib")
     X_test, y_test, _, _, _ = process_data(
-        data, training=True, label='churn', cat_features=get_cat_features(),ohe=ohe, lb=lb, scaler=scaler)
+        data, training=False, label='churn', cat_features=get_cat_features(),
+        ohe=ohe, lb=lb, scaler=scaler)
     assert X_test.shape[0] == y_test.shape[0]
+
 
 def test_predictions_data(data):
     """
-    Check if test data has the same number of lengths as predictions
+    Check if test data has the same length as predictions
     """
     ohe = load("outputs/ohe.joblib")
-    lb = load("outputs/lb.joblib") 
+    lb = load("outputs/lb.joblib")
     scaler = load("outputs/scaler.joblib")
     model_object = load("outputs/model.joblib")
     X_test, _, _, _, _ = process_data(
-        data, training=True, label='churn', cat_features=get_cat_features(),ohe=ohe, lb=lb, scaler=scaler)
-    predictions=model_predictions(X_test, model_object)
-    assert len(X_test)== len(predictions)   
+        data, training=False, label='churn', cat_features=get_cat_features(),
+        ohe=ohe, lb=lb, scaler=scaler)
+    predictions = model_predictions(X_test, model_object)
+    assert len(X_test) == len(predictions)
