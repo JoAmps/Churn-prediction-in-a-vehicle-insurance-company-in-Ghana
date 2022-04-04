@@ -87,7 +87,7 @@ async def inferences(user_data: User):
                      user_data.type_of_vehicle,
                      ]])
 
-    df = DataFrame(data=array, columns=[
+    df_temp = DataFrame(data=array, columns=[
         'city',
         'type_of_plan',
         'highest_level_education',
@@ -105,10 +105,10 @@ async def inferences(user_data: User):
     ])
 
     X, _, _, _, _ = data_preprocess.process_data(
-        df,
+        df_temp,
         training=False,
         cat_features=model.get_cat_features(),
-        ohe=ohe, lb=lb, scaler=scaler)
+        lb=lb, ohe=ohe, scaler=scaler)
     prediction = model.inference(model_object, X)
     y = lb.inverse_transform(prediction)[0]
     return {"prediction": y}

@@ -1,6 +1,5 @@
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import OneHotEncoder, LabelBinarizer
 
 
@@ -41,8 +40,6 @@ def process_data(
     else:
         y = np.array([])
 
-    sampler = SMOTE(random_state=0, k_neighbors=20)
-
     X_categorical = X[cat_features].values
     X_continuous = X.drop(*[cat_features], axis=1)
 
@@ -62,5 +59,5 @@ def process_data(
             pass
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
-    X, y = sampler.fit_resample(X, y)
+
     return X, y, lb, ohe, scaler

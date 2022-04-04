@@ -18,12 +18,12 @@ if __name__ == '__main__':
     train, test = split_data(df)
     X_train, y_train, lb, ohe, scaler = process_data(
         train, training=True, label='churn', cat_features=get_cat_features())
-    X_test, y_test, lb_t, ohe_t, scaler_t = process_data(
+    X_test, y_test, lb, ohe, scaler = process_data(
         test, training=False, label='churn', cat_features=get_cat_features(),
-        ohe=ohe, lb=lb, scaler=scaler)
-    dump(lb_t, './outputs/lb.joblib')
-    dump(ohe_t, './outputs/ohe.joblib')
-    dump(scaler_t, './outputs/scaler.joblib')
+        lb=lb, ohe=ohe, scaler=scaler)
+    dump(lb, './outputs/lb.joblib')
+    dump(ohe, './outputs/ohe.joblib')
+    dump(scaler, './outputs/scaler.joblib')
     model = train_model(X_train, y_train)
     dump(model, './outputs/model.joblib')
     predictions = model_predictions(X_test, model)

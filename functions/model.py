@@ -1,6 +1,6 @@
 from sklearn.metrics import f1_score, precision_score, recall_score
 import logging
-from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 
 
@@ -19,7 +19,8 @@ def split_data(data):
         test data for validation
     """
     try:
-        train, test = train_test_split(data, test_size=0.2, random_state=0)
+        train, test = train_test_split(
+            data, test_size=0.2, random_state=0, stratify=data['churn'])
         logging.info('SUCCESS!:Data split successfully')
         return train, test
     except BaseException:
@@ -55,7 +56,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     try:
-        model = LogisticRegression(solver='liblinear')
+        model = XGBClassifier()
         model.fit(X_train, y_train)
         logging.info('SUCCESS!:Model trained and saved')
         return model

@@ -47,7 +47,7 @@ def test_process_test(data):
     scaler = load("outputs/scaler.joblib")
     X_test, y_test, _, _, _ = process_data(
         data, training=False, label='churn', cat_features=get_cat_features(),
-        ohe=ohe, lb=lb, scaler=scaler)
+        lb=lb, ohe=ohe, scaler=scaler)
     assert X_test.shape[0] == y_test.shape[0]
 
 
@@ -61,6 +61,6 @@ def test_predictions_data(data):
     model_object = load("outputs/model.joblib")
     X_test, _, _, _, _ = process_data(
         data, training=False, label='churn', cat_features=get_cat_features(),
-        ohe=ohe, lb=lb, scaler=scaler)
+        lb=lb, ohe=ohe, scaler=scaler)
     predictions = model_predictions(X_test, model_object)
     assert len(X_test) == len(predictions)
