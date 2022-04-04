@@ -5,3 +5,4 @@ pytest
 requests
 flake8
 imblearn
+xgboost
