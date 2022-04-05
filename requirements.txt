@@ -8,4 +8,6 @@ imblearn
 xgboost
 gunicorn
 uvloop
-httptools
+fastapi
+joblib
+pydantic
