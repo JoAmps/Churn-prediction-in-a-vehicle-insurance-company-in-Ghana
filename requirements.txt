@@ -11,3 +11,5 @@ uvloop
 fastapi
 joblib
 pydantic
+typing_extensions
+uvicorn
