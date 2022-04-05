@@ -23,7 +23,7 @@ def save_data(df):
         logging.info('SUCCESS: Data saved succesfully')
         return df.to_csv('./datasets/cleaned_data.csv')
     except BaseException:
-        logging.info('ERROR: Data not saved')     
+        logging.info('ERROR: Data not saved')
 
 
 if __name__ == '__main__':
