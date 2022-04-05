@@ -20,7 +20,7 @@ def split_data(data):
     """
     try:
         train, test = train_test_split(
-            data, test_size=0.2, random_state=0, stratify=data['churn'])
+            data, test_size=0.2, random_state=0, stratify=data['churn'])    
         logging.info('SUCCESS!:Data split successfully')
         return train, test
     except BaseException:
