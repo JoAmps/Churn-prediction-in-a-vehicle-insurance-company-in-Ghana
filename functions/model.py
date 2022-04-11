@@ -56,7 +56,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     try:
-        model = XGBClassifier()
+        model = XGBClassifier(learning_rate= 0.3, max_depth= 7, n_estimators= 100,random_state=0,verbosity=0)
         model.fit(X_train, y_train)
         logging.info('SUCCESS!:Model trained and saved')
         return model
@@ -79,7 +79,8 @@ def model_predictions(X_test, model):
     predictions : int
     """
     try:
-        predictions = model.predict(X_test)
+        predictions=model.predict_proba(X_test)[:,1] >= 0.55
+        #predictions = model.predict(X_test)
         logging.info('SUCCESS!:Model predictions generated')
         return predictions
     except BaseException:
