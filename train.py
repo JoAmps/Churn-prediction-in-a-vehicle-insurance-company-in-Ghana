@@ -5,16 +5,13 @@ from clean_data import load_data
 from functions.model import train_model, \
     compute_metrics, model_predictions, split_data, get_cat_features
 from joblib import dump
-import glob
-import os
+
 
 logging.basicConfig(
     filename='./outputs/process.log',
     level=logging.INFO,
     filemode='w',
     format='%(name)s - %(levelname)s - %(message)s')
-
-#current_data=glob.glob(f'datasets/cleaned_data*.csv')
 
 
 if __name__ == '__main__':
@@ -32,8 +29,8 @@ if __name__ == '__main__':
     dump(model, './outputs/model.joblib')
     predictions = model_predictions(X_test, model)
     precision, recall, f1 = compute_metrics(y_test, predictions)
-    with open("./outputs/recall_score.txt","w") as file:
-            file.write(recall.astype('str'))
+    with open("./outputs/recall_score.txt", "w") as file:
+        file.write(recall.astype('str'))
     model_scores = []
     scores = "precision: %s " \
         "recall: %s f1: %s" % (precision, recall, f1)
