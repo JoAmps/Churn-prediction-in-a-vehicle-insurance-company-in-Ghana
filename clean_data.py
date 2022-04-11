@@ -1,6 +1,7 @@
 import pandas as pd
 import logging
-
+import glob
+import os
 
 logging.basicConfig(
     filename='./outputs/process.log',
@@ -9,11 +10,14 @@ logging.basicConfig(
     format='%(name)s - %(levelname)s - %(message)s')
 
 
-def load_data(path):
+input_data = glob.glob(f'datasets/*.csv')
+current_data=glob.glob(f'datasets/cleaned_data*.csv')
+
+def load_data():
     try:
-        df = pd.read_csv(path, index_col=[0])
-        return df
+        df=pd.concat([pd.read_csv(i) for i in (current_data)])
         logging.info('SUCCESS: Data imported succesfully')
+        return df
     except BaseException:
         logging.info('ERROR: Data not imported')
 
@@ -27,5 +31,5 @@ def save_data(df):
 
 
 if __name__ == '__main__':
-    df = load_data("datasets/raw_data.csv")
+    df = load_data()
     save_data(df)

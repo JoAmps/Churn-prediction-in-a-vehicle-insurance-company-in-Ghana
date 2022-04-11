@@ -11,7 +11,7 @@ def data():
     """
     Obtain data
     """
-    df = load_data("datasets/raw_data.csv")
+    df = load_data()
     return df
 
 
