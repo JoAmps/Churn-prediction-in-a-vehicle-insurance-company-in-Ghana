@@ -34,7 +34,6 @@ class User(BaseModel):
     sex: Literal[
         'female', 'male'
     ]
-    salary_monthly: int
     relationship_status: Literal[
         'Married', 'Single', 'Divorced'
     ]
@@ -46,7 +45,6 @@ class User(BaseModel):
                           'contacting_branch_directly',
                           'customer_call_centre',
                           'via_the_web']
-    claim_amount: int
     type_of_vehicle: Literal['4-door_car',
                              '2-door_car',
                              'SUV',
