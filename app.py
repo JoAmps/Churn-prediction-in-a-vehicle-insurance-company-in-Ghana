@@ -74,14 +74,12 @@ async def inferences(user_data: User):
                      user_data.highest_level_education,
                      user_data.work_status,
                      user_data.sex,
-                     user_data.salary_monthly,
                      user_data.relationship_status,
                      user_data.payment_per_month,
                      user_data.weeks_since_claim,
                      user_data.open_policies,
                      user_data.Renew_Offer_Type,
                      user_data.reachability,
-                     user_data.claim_amount,
                      user_data.type_of_vehicle,
                      ]])
 
@@ -91,14 +89,12 @@ async def inferences(user_data: User):
         'highest_level_education',
         'work_status',
         'sex',
-        'salary_monthly',
         'relationship_status',
         'payment_per_month',
         'weeks_since_claim',
         'open_policies',
         'Renew_Offer_Type',
         'reachability',
-        'claim_amount',
         'type_of_vehicle',
     ])
 

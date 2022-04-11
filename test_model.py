@@ -1,7 +1,8 @@
 import pytest
 from clean_data import load_data
 from functions.data_preprocess import process_data
-from functions.model import get_cat_features, split_data, model_predictions
+from functions.model import get_cat_features, split_data,\
+    model_predictions, get_num_features
 from joblib import load
 
 
@@ -21,9 +22,21 @@ def test_null(data):
     assert data.shape == data.dropna().shape
 
 
+def test_categorical_features(data):
+    """
+    check categorical columns has data types as being categorical
+    """
+    assert (data[get_cat_features()].dtypes == 'object').all()
+
+
+def test_numerical_features(data):
+    assert ((data[get_num_features()].dtypes == 'float') |
+            (data[get_num_features()].dtypes == 'int')).all()
+
+
 def test_split_data(data):
     """
-    check train data has more data than test data
+    check numerical columns has data types as being integer or float
     """
     train, test = split_data(data)
     assert len(train) > len(test)

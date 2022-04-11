@@ -40,6 +40,14 @@ def get_cat_features():
     return cat_features
 
 
+def get_num_features():
+    num_features = [
+        'payment_per_month',
+        'weeks_since_claim',
+        'open_policies']
+    return num_features
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns the
