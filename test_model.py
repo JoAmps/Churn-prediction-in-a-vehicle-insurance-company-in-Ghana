@@ -30,13 +30,16 @@ def test_categorical_features(data):
 
 
 def test_numerical_features(data):
+    """
+    check numerical columns has data types as being integer or float
+    """
     assert ((data[get_num_features()].dtypes == 'float') |
             (data[get_num_features()].dtypes == 'int')).all()
 
 
 def test_split_data(data):
     """
-    check numerical columns has data types as being integer or float
+    check train data has more data than test data
     """
     train, test = split_data(data)
     assert len(train) > len(test)
