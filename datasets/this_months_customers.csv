@@ -9,17 +9,17 @@
 8807,Accra,No,primary_plan,Doctor,Employed,female,Married,136,64,3,1,contacting_agent,4-door_car
 8808,Accra,No,extended_plan,College,Employed,female,Divorced,252,26,3,3,via_the_web,SUV
 8809,Accra,No,extended_plan,Bachelor,Employed,female,Married,264,13,2,3,contacting_agent,SUV
-8810,Accra,No,primary_plan,High School or Below,Unemployed,female,Married,134,69,1,1,customer_call_centre,4-door_car
+8810,Accra,No,primary_plan,High School or Below,Unemployed,female,Married,132,69,1,1,customer_call_centre,4-door_car
 8811,Accra,No,primary_plan,Bachelor,Unemployed,female,Divorced,134,13,7,2,contacting_branch_directly,4-door_car
-8812,Accra,Yes,extended_plan,Doctor,Employed,female,Married,198,39,1,2,contacting_agent,4-door_car
-8813,Accra,No,primary_plan,High School or Below,Employed,male,Single,142,125,8,1,contacting_branch_directly,4-door_car
+8812,Accra,Yes,extended_plan,Doctor,Employed,female,Married,195,39,1,2,contacting_agent,4-door_car
+8813,Accra,No,primary_plan,High School or Below,Employed,male,Single,143,125,8,1,contacting_branch_directly,4-door_car
 8814,Accra,No,primary_plan,Bachelor,Employed,female,Married,122,4,2,1,contacting_branch_directly,4-door_car
-8815,Accra,No,primary_plan,College,Employed,female,Married,128,146,2,1,contacting_branch_directly,2-door_car
+8815,Accra,No,primary_plan,College,Employed,female,Married,128,148,2,1,contacting_branch_directly,2-door_car
 8816,Accra,No,extended_plan,High School or Below,Unemployed,male,Divorced,153,60,5,3,contacting_agent,4-door_car
 8817,Accra,No,premium_plan,High School or Below,Employed,male,Married,202,69,1,2,contacting_branch_directly,2-door_car
-8818,Accra,No,primary_plan,Bachelor,Unemployed,female,Single,234,56,2,2,via_the_web,SUV
+8818,Accra,No,primary_plan,Bachelor,Unemployed,female,Single,234,57,2,2,via_the_web,SUV
 8819,Accra,No,premium_plan,Bachelor,Employed,female,Divorced,228,142,9,3,contacting_agent,2-door_car
-8820,Accra,Yes,primary_plan,High School or Below,Unemployed,male,Married,146,73,7,2,customer_call_centre,2-door_car
+8820,Accra,Yes,primary_plan,High School or Below,Unemployed,male,Married,149,73,7,2,customer_call_centre,2-door_car
 8821,Accra,No,extended_plan,Bachelor,Employed,male,Divorced,188,52,2,1,contacting_agent,4-door_car
 8822,Accra,No,primary_plan,High School or Below,Unemployed,female,Single,372,47,8,1,contacting_branch_directly,luxurious_suv
 8823,Accra,No,premium_plan,College,Unemployed,male,Married,236,129,7,1,via_the_web,4-door_car

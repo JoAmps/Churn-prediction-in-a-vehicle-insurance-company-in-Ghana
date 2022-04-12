@@ -1,4 +1,6 @@
-root - INFO - new_data_available
-root - INFO - New data available, therefore running training script on new data
-root - INFO - Current recall score less than previous score, model_drift may have occurred
+root - INFO - New_data_available
+root - INFO - Therefore running training        script on new data
+root - INFO - SUCCESS!:Model predictions generated
+root - INFO - SUCCESS: Model scoring completed
+root - INFO - Current recall score less than previous score,                     model_drift may have occurred
 root - INFO - further_investigation_warranted
