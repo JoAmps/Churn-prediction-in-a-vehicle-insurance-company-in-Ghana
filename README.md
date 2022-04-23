@@ -65,15 +65,20 @@ Since this insurance company makes its profit from the number of customers that 
 
 
 ## Results
+
+![Confusion Matrix](https://github.com/JoAmps/Churn-prediction-in-a-vehicle-insurance-company-in-Ghana/blob/main/confusion_matrix.png)
 #### From the original dataset of customers which comprised of 8800 customers, after several experimentation, using different models, the xgboost model performed the best, with a recall of 95.9% and precision of 97.7%
 #### 15 false positives, which indicates 15 customers who actually churned, were predicted as not churned, and 6 false negatives, which means 6 customers did not churn, and they were predicted as churned was obtained
 #### Though this result is good, the performance was improved by hyper parameter tuning
 #### Now theres a decision to determine which is more suited to the business, so theres a tradeoff between false positives and false negatives
 #### More false positives suggests that there are more customers who churned, that the model did not pick up, in such a case, if the number is high, the company would have to spend money and resources on those customers to get them to not churn, for example more personalized advertissment, more incentives and discounts
+
+![roc_curve](https://github.com/JoAmps/Churn-prediction-in-a-vehicle-insurance-company-in-Ghana/blob/main/roc_auc_curve.png)
 #### More false negatives suggests that there are more customers who did not churn, but the model predicted them to churn, in this situation, if this number is high, the company woud be spending time and resources on the wrong customers, 
 #### So there is this tradeoff in what is important to the company, which situation they deem most profitable to pursue, using that knowledge, we adjust the threshold to take care of that
 #### I used a threshold of 0.59, to reduce the false positives to 9, and increase the false negatives to 10, but this decision is based on the company needs and wants
 
+![Feature Importance](https://github.com/JoAmps/Churn-prediction-in-a-vehicle-insurance-company-in-Ghana/blob/main/feature_importance.png)
 ## Monitoring
 I created a monitoring script, which detects if new data is available(more customers), and if new data is available, performs inference on the data and compares the new recall score to the previous score, if the new score is equal or higher than the previous, it suggests that model drift has not occurred, and if the score is lower, it is a possible indication that model drift has occurred, and further investigation is required, such as model retraining and the likes
 
