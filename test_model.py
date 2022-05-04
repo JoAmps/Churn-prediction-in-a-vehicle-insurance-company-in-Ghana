@@ -24,14 +24,14 @@ def test_null(data):
 
 def test_categorical_features(data):
     """
-    check categorical columns has data types as being categorical
+    check if categorical columns has data types as being categorical
     """
     assert (data[get_cat_features()].dtypes == 'object').all()
 
 
 def test_numerical_features(data):
     """
-    check numerical columns has data types as being integer or float
+    check if numerical columns has data types as being integer or float
     """
     assert ((data[get_num_features()].dtypes == 'float') |
             (data[get_num_features()].dtypes == 'int')).all()
