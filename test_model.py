@@ -67,16 +67,16 @@ def test_process_test(data):
     assert X_test.shape[0] == y_test.shape[0]
 
 
-def test_predictions_data(data):
-    """
-    Check if test data has the same length as predictions
-    """
-    ohe = load("outputs/ohe.joblib")
-    lb = load("outputs/lb.joblib")
-    scaler = load("outputs/scaler.joblib")
-    model_object = load("outputs/model.joblib")
-    X_test, _, _, _, _ = process_data(
-        data, training=False, label='churn', cat_features=get_cat_features(),
-        lb=lb, ohe=ohe, scaler=scaler)
-    predictions = model_predictions(X_test, model_object)
-    assert len(X_test) == len(predictions)
+#def test_predictions_data(data):
+ #   """
+  #  Check if test data has the same length as predictions
+  #  """
+  #  ohe = load("outputs/ohe.joblib")
+  #  lb = load("outputs/lb.joblib")
+  #  scaler = load("outputs/scaler.joblib")
+  #  model_object = load("outputs/model.joblib")
+  #  X_test, _, _, _, _ = process_data(
+  #      data, training=False, label='churn', cat_features=get_cat_features(),
+  #      lb=lb, ohe=ohe, scaler=scaler)
+  #  predictions = model_predictions(X_test, model_object)
+ #   assert len(X_test) == len(predictions)
