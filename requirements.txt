@@ -1,6 +1,6 @@
 numpy
 pandas
-scikit-learn
+scikit-learn==1.1.0
 pytest
 requests
 flake8
