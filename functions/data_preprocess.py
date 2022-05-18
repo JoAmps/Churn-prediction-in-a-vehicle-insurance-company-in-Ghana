@@ -31,7 +31,7 @@ def process_data(
         Processed data.
     y : np.array
         Processed labels if labeled=True, otherwise\
-             empty  np.array.
+             empty   np.array.
     """
 
     if label is not None:
