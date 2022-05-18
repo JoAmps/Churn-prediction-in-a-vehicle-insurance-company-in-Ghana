@@ -80,6 +80,8 @@ Since this insurance company makes its profit from the number of customers that 
 
 ![Feature Importance](https://github.com/JoAmps/Churn-prediction-in-a-vehicle-insurance-company-in-Ghana/blob/main/feature_importance.png)
 ## Monitoring
-I created a monitoring script, which detects if new data is available(more customers), and if new data is available, performs inference on the data and compares the new recall score to the previous score, if the new score is equal or higher than the previous, it suggests that model drift has not occurred, and if the score is lower, it is a possible indication that model drift has occurred, and further investigation is required, such as model retraining and the likes
+I created a monitoring script, which detects if new data is available(more customers), and if new data is available, performs inference on the data and compares the new score to the previous score, if the new score is equal or higher than the previous, it suggests that model drift has not occurred, and if the score is lower, it is a possible indication that model drift has occurred, and further investigation is required, such as model retraining and the likes
 
+# Conclusion
+As said at the beginning, customers churn all the time, and if you are a company that succeeds mostly on customers subscribing to a particular service you are offering(like this insurance company), being able to predict the customers that would churn is crucial to your success. This project is a huge step in the right direction to help the company retain such valuable customers to keep the business afloat and make profit.
 
