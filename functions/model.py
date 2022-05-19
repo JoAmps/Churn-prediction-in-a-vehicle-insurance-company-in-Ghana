@@ -65,7 +65,8 @@ def train_model(X_train, y_train):
     """
     try:
         model = XGBClassifier(learning_rate=0.3, max_depth=7, n_estimators=100,
-                              random_state=0, verbosity=0,use_label_encoder=False)
+                              random_state=0, verbosity=0,
+                              use_label_encoder=False)
         model.fit(X_train, y_train)
         logging.info('SUCCESS!:Model trained and saved')
         return model
