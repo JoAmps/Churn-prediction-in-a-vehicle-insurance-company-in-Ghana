@@ -4,7 +4,7 @@ scikit-learn==1.0.2
 pytest==7.0.1
 requests==2.27.1
 flake8==4.0.1
-imblearn==0.9.0
+imblearn
 xgboost==1.5.1
 gunicorn==20.1.0
 uvloop==0.16.0
